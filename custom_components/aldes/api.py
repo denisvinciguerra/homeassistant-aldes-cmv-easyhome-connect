@@ -70,7 +70,7 @@ class AldesApi:
         if initial_response.status == 401:
             initial_response.close()
             await self.authenticate()
-            return request(
+            return await request(
                 url,
                 headers={self._AUTHORIZATION_HEADER_KEY: self._build_authorization()},
                 **kwargs,

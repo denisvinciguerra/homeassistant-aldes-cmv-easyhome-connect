@@ -1,10 +1,10 @@
-"""Aldes"""
+"""Aldes data coordinator."""
 from __future__ import annotations
 
+import asyncio
 from datetime import timedelta
 import logging
 from typing import Any
-import async_timeout
 
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
@@ -33,7 +33,7 @@ class AldesDataUpdateCoordinator(DataUpdateCoordinator[dict[str, Any]]):
     async def _async_update_data(self) -> dict[str, Any]:
         """Update data via library."""
         try:
-            async with async_timeout.timeout(self._API_TIMEOUT):
+            async with asyncio.timeout(self._API_TIMEOUT):
                 return await self.api.fetch_data()
         except Exception as exception:
             raise UpdateFailed(exception) from exception

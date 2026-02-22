@@ -7,7 +7,6 @@ from homeassistant.const import (
     PERCENTAGE,
     CONCENTRATION_PARTS_PER_MILLION,
     EntityCategory,
-    UnitOfPower,
 )
 from homeassistant.components.sensor import (
     SensorEntity,
@@ -166,13 +165,11 @@ EASY_HOME_SENSORS = {
     f"{ATTR_PWRQAI}": AldesSensorDescription(
         key="status",
         icon="mdi:wind-power",
-        name="Current Mode",
+        name="Current Mode Power",
         translation_key="mode",
-        device_class=SensorDeviceClass.POWER,
-        native_unit_of_measurement=UnitOfPower.WATT,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
-        path2="VarHR",
+        path2="PwrQai",
     ),
 }
 
@@ -273,46 +270,45 @@ class AldesSensorEntity(AldesEntity, SensorEntity):
                             return f"{FRIENDLY_NAMES[self.reference]} {self.product_serial_number} {thermostat['Name']} temperature"
                 else:
                     return f"{FRIENDLY_NAMES[self.reference]} {self.product_serial_number} {self.entity_description.name}"
-            return None
+        return None
 
     def _determine_native_value(self):
         """Determine native value."""
-        for product in self.coordinator.data:
-            if product["isConnected"]:
-                if product["serial_number"] == self.product_serial_number:
-                    if self.entity_description.path2recursive:
-                        for thermostat in product[self.entity_description.path1][
-                            self.entity_description.path2
-                        ]:
-                            if (
-                                thermostat[self.entity_description.path2id]
-                                == self.probe_id
-                            ):
-                                value = thermostat[self.entity_description.path2value]
-                    elif self.entity_description.path3 is None:
-                        value = product[self.entity_description.path1][
-                            self.entity_description.path2
-                        ]
-                    else:
-                        value = product[self.entity_description.path1][
-                            self.entity_description.path2
-                        ][self.entity_description.path3]
-                else:
-                    value = None
-            else:
-                value = None
+        product = self._find_product()
+        if product is None or not product.get("isConnected"):
+            return None
 
-        if value is not None:
-            if self.entity_description.value:
-                value = self.entity_description.value(value)
+        try:
+            desc = self.entity_description
+            if desc.path2recursive:
+                for item in product[desc.path1][desc.path2]:
+                    if item[desc.path2id] == self.probe_id:
+                        value = item[desc.path2value]
+                        break
+                else:
+                    return None
+            elif desc.path3 is None:
+                value = product[desc.path1][desc.path2]
+            else:
+                value = product[desc.path1][desc.path2][desc.path3]
+        except (KeyError, TypeError, IndexError):
+            return None
+
+        if value is not None and desc.value:
+            value = desc.value(value)
         return value
+
+    def _find_product(self):
+        """Find this sensor's product in coordinator data."""
+        for product in self.coordinator.data:
+            if product["serial_number"] == self.product_serial_number:
+                return product
+        return None
 
     @callback
     def _handle_coordinator_update(self):
         """Fetch state from the device."""
         native_value = self._determine_native_value()
-        # Sometimes (quite rarely) the device returns None as the sensor value so we
-        # check that the value: before updating the state.
         if native_value is not None:
             self._attr_native_value = native_value
-            super()._handle_coordinator_update()
+        super()._handle_coordinator_update()

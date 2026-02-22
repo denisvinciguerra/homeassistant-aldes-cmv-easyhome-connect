@@ -2,10 +2,12 @@
 from __future__ import annotations
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.components.binary_sensor import BinarySensorEntity
+from homeassistant.components.binary_sensor import (
+    BinarySensorDeviceClass,
+    BinarySensorEntity,
+)
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.entity import DeviceInfo
-from .const import DOMAIN, MANUFACTURER, FRIENDLY_NAMES
+from .const import DOMAIN, MANUFACTURER
 from .entity import AldesEntity
 
 
@@ -34,17 +36,7 @@ async def async_setup_entry(
 class AldesBinarySensorEntity(AldesEntity, BinarySensorEntity):
     """Define an Aldes binary sensor."""
 
-    _attr_device_class = "connectivity"
-
-    @property
-    def device_info(self):
-        """Return the device info."""
-        return DeviceInfo(
-            identifiers={(DOMAIN, self.product_serial_number)},
-            manufacturer=MANUFACTURER,
-            name=f"{FRIENDLY_NAMES[self.reference]} {self.product_serial_number}",
-            model=FRIENDLY_NAMES[self.reference],
-        )
+    _attr_device_class = BinarySensorDeviceClass.CONNECTIVITY
 
     @property
     def unique_id(self):

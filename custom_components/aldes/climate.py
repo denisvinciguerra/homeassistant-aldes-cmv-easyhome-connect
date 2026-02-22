@@ -9,7 +9,6 @@ from homeassistant.components.climate import (
     HVACMode,
 )
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.entity import DeviceInfo
 from .const import DOMAIN
 from .entity import AldesEntity
 
@@ -65,13 +64,6 @@ class AldesClimateEntity(AldesEntity, ClimateEntity):
         self._attr_hvac_action = "Unknown"
 
     @property
-    def device_info(self):
-        """Return the device info."""
-        return DeviceInfo(
-            identifiers={(DOMAIN, self.thermostat_id)},
-        )
-
-    @property
     def unique_id(self):
         """Return a unique ID to use for this entity."""
         return f"{DOMAIN}_{self.thermostat_id}_climate"
@@ -84,29 +76,29 @@ class AldesClimateEntity(AldesEntity, ClimateEntity):
                 for thermostat in product["indicator"]["thermostats"]:
                     if thermostat["ThermostatId"] == self.thermostat_id:
                         return f"{thermostat['Name']} climate"
-            return None
+        return None
 
     @property
     def min_temp(self):
-        """Get the minimum temperature"""
+        """Get the minimum temperature."""
         for product in self.coordinator.data:
             if product["serial_number"] == self.product_serial_number:
                 if product["indicator"]["current_air_mode"] == "B":
                     return product["indicator"]["cmist"]
                 if product["indicator"]["current_air_mode"] == "C":
                     return product["indicator"]["fmist"]
-            return None
+        return None
 
     @property
     def max_temp(self):
-        """Get the maximum temperature"""
+        """Get the maximum temperature."""
         for product in self.coordinator.data:
             if product["serial_number"] == self.product_serial_number:
                 if product["indicator"]["current_air_mode"] == "B":
                     return product["indicator"]["cmast"]
                 if product["indicator"]["current_air_mode"] == "C":
                     return product["indicator"]["fmast"]
-            return None
+        return None
 
     @callback
     def _handle_coordinator_update(self) -> None:
@@ -149,10 +141,10 @@ class AldesClimateEntity(AldesEntity, ClimateEntity):
 
     @property
     def _thermostat_name(self):
-        """Get the thermostat name as defined in the API"""
+        """Get the thermostat name as defined in the API."""
         for product in self.coordinator.data:
             if product["serial_number"] == self.product_serial_number:
                 for thermostat in product["indicator"]["thermostats"]:
                     if thermostat["ThermostatId"] == self.thermostat_id:
                         return thermostat["Name"]
-            return None
+        return None
