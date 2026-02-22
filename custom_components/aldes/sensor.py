@@ -169,7 +169,7 @@ EASY_HOME_SENSORS = {
         translation_key="mode",
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
-        path2="PwrQai",
+        path2="VarHR",
     ),
 }
 
