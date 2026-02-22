@@ -3,7 +3,7 @@ from homeassistant.const import Platform
 
 NAME = "Aldes"
 DOMAIN = "aldes"
-VERSION = "2.0.3"
+VERSION = "2.0.4"
 
 CONF_USERNAME = "username"
 CONF_PASSWORD = "password"

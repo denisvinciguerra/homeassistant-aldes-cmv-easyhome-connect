@@ -58,6 +58,33 @@ class AldesFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
             errors=self._errors,
         )
 
+    async def async_step_reconfigure(self, user_input=None):
+        """Handle reconfiguration of credentials."""
+        self._errors = {}
+
+        if user_input is not None:
+            valid = await self._test_credentials(
+                user_input[CONF_USERNAME], user_input[CONF_PASSWORD]
+            )
+            if valid:
+                return self.async_update_reload_and_abort(
+                    self._get_reconfigure_entry(),
+                    data_updates=user_input,
+                )
+            self._errors["base"] = "auth"
+
+        reconfigure_entry = self._get_reconfigure_entry()
+        return self.async_show_form(
+            step_id="reconfigure",
+            data_schema=vol.Schema(
+                {
+                    vol.Required(CONF_USERNAME, default=reconfigure_entry.data.get(CONF_USERNAME, "")): str,
+                    vol.Required(CONF_PASSWORD): str,
+                }
+            ),
+            errors=self._errors,
+        )
+
     async def _test_credentials(self, username, password):
         """Return true if credentials is valid."""
         try:

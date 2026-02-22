@@ -3,10 +3,18 @@
         "step": {
             "user": {
                 "title": "Aldes",
-                "description": "Si vous avez besoin d'aide pour la configuration, regardez ici: https://github.com/guix77/homeassistant-aldes",
+                "description": "Entrez vos identifiants Aldes (les mêmes que l'application mobile Aldes). Voir https://github.com/denisvinciguerra/homeassistant-aldes pour l'aide.",
                 "data": {
                     "username": "Identifiant",
-                    "password": "Mot de Passe"
+                    "password": "Mot de passe"
+                }
+            },
+            "reconfigure": {
+                "title": "Reconfigurer Aldes",
+                "description": "Mettez à jour vos identifiants Aldes.",
+                "data": {
+                    "username": "Identifiant",
+                    "password": "Mot de passe"
                 }
             }
         },
@@ -14,7 +22,8 @@
             "auth": "Identifiant ou mot de passe erroné."
         },
         "abort": {
-            "single_instance_allowed": "Une seule instance est autorisée."
+            "single_instance_allowed": "Une seule instance est autorisée.",
+            "reconfigure_successful": "Identifiants mis à jour avec succès."
         }
     }
 }

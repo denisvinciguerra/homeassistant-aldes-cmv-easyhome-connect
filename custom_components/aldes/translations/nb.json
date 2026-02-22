@@ -3,7 +3,7 @@
         "step": {
             "user": {
                 "title": "Aldes",
-                "description": "Hvis du trenger hjep til konfigurasjon ta en titt her: https://github.com/guix77/homeassistant-aldes",
+                "description": "Skriv inn Aldes-kontoopplysningene dine (samme som Aldes-mobilappen). Se https://github.com/denisvinciguerra/homeassistant-aldes for hjelp.",
                 "data": {
                     "username": "Brukernavn",
                     "password": "Passord"
