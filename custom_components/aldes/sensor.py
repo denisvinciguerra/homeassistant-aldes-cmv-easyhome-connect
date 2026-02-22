@@ -28,6 +28,7 @@ ATTR_CO2 = "CO2"
 ATTR_QAI = "Air Quality Index"
 ATTR_POLLUANT = "Polluant Dominant"
 ATTR_VARHR = "Humidity Variation"
+ATTR_PWMQAI = "Fan Speed"
 
 
 @dataclass
@@ -167,6 +168,17 @@ EASY_HOME_SENSORS = {
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="VarHR",
+        value=lambda value: round(value),
+    ),
+    f"{ATTR_PWMQAI}": AldesSensorDescription(
+        key="status",
+        icon="mdi:fan",
+        name="Fan Speed",
+        translation_key="fan_speed",
+        native_unit_of_measurement="rpm",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        path1="indicator",
+        path2="PwmQai",
         value=lambda value: round(value),
     ),
 }

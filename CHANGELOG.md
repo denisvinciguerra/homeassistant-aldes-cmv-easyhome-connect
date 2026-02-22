@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.2
+
+- 🌀 **New Fan Speed sensor** — exposes the fan speed in RPM (`PwmQai`)
+
 ## v2.1.1
 
 - 🔢 **Rounded sensor values** — humidity sensors now display as integers (no more 15-digit decimals), temperatures rounded to 0.1°C
