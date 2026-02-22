@@ -1,40 +1,50 @@
 # Aldes integration for Home Assistant
 
-This integration allows Home Assistant to fetch and modify data from Aldes products through an AldesConnect box.
+This integration allows Home Assistant to interact with **Aldes EASYHOME PureAir Compact CONNECT** ventilation units (VMC simple flux) through an **Aldes Connect Box**.
 
-**Warning:** This integration is barely usable, given AldesConnect deep connectivity issues, even with the official mobile app (see the PlayStore comments for instance). Also, the API lacks several important features which makes this integration a lesser one.
+Setup validated with **2 VMCs linked to the same Aldes account**.
 
-## Supported products
+## Supported features
 
-### T.One® AIR
-### EASYHOME PureAir Compact CONNECT
-
-#### Implemented
-
-+ Binary sensor entity to check if the product is connected to Aldes cloud
-+ Temperature sensor entities for each room
-+ Additional sensors (including humidity and temperature for Controlled Mechanical Ventilation as well as Air quality)
-+ Climate entities for each room that allow to set the target temperature
-+ Select entity to change Controlled Mechanical Ventilation mode between Halidays, Daily, Boost, Guest, Air prog.
-
-#### To do
-
-+ Air cooling mode is not implemented yet since I still need to activate the feature
-
-### Other products
-
-I can't develop support for other products since I don't have them. But you can always submit a PR!
+- Binary sensor to check product connectivity to Aldes cloud
+- Temperature sensors for each room (kitchen, bathrooms)
+- Humidity sensors for each room
+- CO2 sensor
+- Air Quality Index (QAI) sensor
+- Dominant pollutant sensor
+- Humidity variation sensor
+- Current mode power sensor
+- Climate entities for rooms with target temperature control (T.One AIR)
+- Select entity to change VMC mode: Holidays, Daily, Boost, Guest, Air Prog
 
 ## Installation
 
-This integration is available through HACS.
+Available through [HACS](https://hacs.xyz/) as a custom repository.
 
-The username and password asked during the configuration are the same that you use for the Aldes mobile app.
+1. In HACS, go to **Integrations** > **3 dots menu** > **Custom repositories**
+2. Add `https://github.com/denisvinciguerra/homeassistant-aldes` with category **Integration**
+3. Install the integration, restart Home Assistant
+4. Go to **Settings** > **Integrations** > **Add Integration** > search **Aldes**
+5. Enter your Aldes account credentials (same as the Aldes mobile app)
 
-## Development
+## About this fork
 
-This integration is based on https://github.com/custom-components/integration_blueprint
+This is a fork of [homeassistant-aldes](https://github.com/guix77/homeassistant-aldes/) by [guix77](https://github.com/guix77), debugged via vibe coding with Claude.
+
+The original author archived his repository. Other existing forks appear to focus on different Aldes products (T.One AIR, InspirAIR, etc.) rather than the single-flow EASYHOME PureAir Compact CONNECT VMCs.
+
+### Changes from the original
+
+- Fixed multi-device support (multiple VMCs on the same account)
+- Fixed sensors not being linked to their device in Home Assistant
+- Fixed sensor value reading (loop exiting after first product)
+- Fixed select entity mode detection
+- Fixed missing `await` on API auth retry
+- Moved `device_info` to base entity class for proper device grouping
+- Modernized code (`asyncio.timeout`, enum device classes, removed deprecated APIs)
 
 ## Credits
 
-Some code was inspired from https://github.com/aalmazanarbs/hassio_aldes, thanks!
+- Original integration by [guix77](https://github.com/guix77)
+- Some code inspired from [hassio_aldes](https://github.com/aalmazanarbs/hassio_aldes)
+- Based on [integration_blueprint](https://github.com/custom-components/integration_blueprint)
