@@ -2,9 +2,9 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
 
-Home Assistant custom integration for **Aldes EASYHOME PureAir Compact CONNECT** ventilation units (VMC simple flux) via the **Aldes Connect Box**.
+Home Assistant custom integration for **Aldes EASYHOME PureAir Compact CONNECT** single-flow controlled mechanical ventilation (CMV) units via the **Aldes Connect Box**.
 
-✅ Setup validated with **2 VMCs linked to the same Aldes account**
+✅ Setup validated with **2 units linked to the same Aldes account**
 
 ---
 
@@ -16,7 +16,7 @@ Home Assistant custom integration for **Aldes EASYHOME PureAir Compact CONNECT**
 | 🌡️ Temperature | Per-room sensors (kitchen, bathrooms) |
 | 💧 Humidity | Per-room sensors (kitchen, bathrooms) |
 | 💨 CO2 | Carbon dioxide concentration (ppm) |
-| 🍃 Air Quality Index | QAI value from the VMC |
+| 🍃 Air Quality Index | QAI value from the unit |
 | 🌿 Dominant pollutant | Currently dominant pollutant |
 | 📊 Humidity variation | Humidity variation rate |
 | ⚡ Current mode power | Active mode power level |
@@ -41,11 +41,11 @@ Available through [HACS](https://hacs.xyz/) as a custom repository.
 
 This is a fork of [homeassistant-aldes](https://github.com/guix77/homeassistant-aldes/) by [guix77](https://github.com/guix77), debugged via vibe coding with Claude 🤖
 
-The original author archived his repository. Other existing forks appear to focus on different Aldes products (T.One AIR, InspirAIR, etc.) rather than the single-flow **EASYHOME PureAir Compact CONNECT** VMCs.
+The original author archived his repository. Other existing forks appear to focus on different Aldes products (T.One AIR, InspirAIR, etc.) rather than the single-flow **EASYHOME PureAir Compact CONNECT** CMV units.
 
 ### 🛠️ Changes from the original
 
-- 🐛 Fixed multi-device support (multiple VMCs on the same account)
+- 🐛 Fixed multi-device support (multiple units on the same account)
 - 🔗 Fixed sensors not being linked to their device in Home Assistant
 - 🔄 Fixed sensor value reading (loop exiting after first product)
 - 🎚️ Fixed select entity mode detection
