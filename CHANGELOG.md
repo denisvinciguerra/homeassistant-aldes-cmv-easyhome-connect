@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.1.3
+
+- 🌍 **Translations in 13 languages** — entity names translated in en, fr, de, es, it, nb, pt-BR, pl, ru, zh-Hans, ja, ko, sv
+- 🏷️ **Fixed English sensor names** — "Polluant Dominant" → "Dominant Pollutant", "Carbon dioxyde" → "Carbon Dioxide"
+
 ## v2.1.2
 
 - 🌀 **New Fan Speed sensor** — exposes the fan speed in RPM (`PwmQai`)
