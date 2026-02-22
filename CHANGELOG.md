@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.5
+
+- 🏷️ **Cleaner entity names** — entities now use `has_entity_name` so HA composes names as `<Device> <Sensor>` instead of duplicating the device name. You may need to delete old entities with duplicate names.
+
 ## v2.0.4
 
 - 🔄 **Reconfigure flow** — update your Aldes credentials from Settings → Integrations → Aldes → Reconfigure, without deleting and recreating the integration

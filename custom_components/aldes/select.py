@@ -72,7 +72,7 @@ class AldesSelectEntity(AldesEntity, SelectEntity):
     @property
     def name(self):
         """Return a name to use for this entity."""
-        return f"{FRIENDLY_NAMES[self.reference]} {self.product_serial_number} mode"
+        return "Mode"
 
     @property
     def current_option(self) -> str:

@@ -75,7 +75,7 @@ class AldesClimateEntity(AldesEntity, ClimateEntity):
             if product["serial_number"] == self.product_serial_number:
                 for thermostat in product["indicator"]["thermostats"]:
                     if thermostat["ThermostatId"] == self.thermostat_id:
-                        return f"{thermostat['Name']} climate"
+                        return thermostat["Name"]
         return None
 
     @property

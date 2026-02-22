@@ -8,6 +8,8 @@ from .const import DOMAIN, FRIENDLY_NAMES, MANUFACTURER
 class AldesEntity(CoordinatorEntity):
     """Base Aldes entity."""
 
+    _attr_has_entity_name = True
+
     def __init__(
         self, coordinator, config_entry, product_serial_number, reference, modem
     ) -> None:

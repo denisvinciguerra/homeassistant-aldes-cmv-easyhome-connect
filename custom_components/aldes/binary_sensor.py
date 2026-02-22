@@ -46,7 +46,7 @@ class AldesBinarySensorEntity(AldesEntity, BinarySensorEntity):
     @property
     def name(self):
         """Return a name to use for this entity."""
-        return f"{MANUFACTURER} {self.product_serial_number} connectivity"
+        return "Connectivity"
 
     @callback
     def _handle_coordinator_update(self) -> None:

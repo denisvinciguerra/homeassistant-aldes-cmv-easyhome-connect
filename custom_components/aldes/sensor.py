@@ -267,9 +267,9 @@ class AldesSensorEntity(AldesEntity, SensorEntity):
                 if self.entity_description.path2 == "thermostats":
                     for thermostat in product["indicator"]["thermostats"]:
                         if thermostat["ThermostatId"] == self.probe_id:
-                            return f"{FRIENDLY_NAMES[self.reference]} {self.product_serial_number} {thermostat['Name']} temperature"
+                            return f"{thermostat['Name']} temperature"
                 else:
-                    return f"{FRIENDLY_NAMES[self.reference]} {self.product_serial_number} {self.entity_description.name}"
+                    return self.entity_description.name
         return None
 
     def _determine_native_value(self):
