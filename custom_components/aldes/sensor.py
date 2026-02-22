@@ -50,7 +50,6 @@ EASY_HOME_SENSORS = {
     f"Kitchen_{ATTR_HUMIDITY}": AldesSensorDescription(
         key="status",
         icon="mdi:water-percent",
-        name="Kitchen Humidity",
         translation_key="kitchen_humidity",
         device_class=SensorDeviceClass.HUMIDITY,
         native_unit_of_measurement=PERCENTAGE,
@@ -63,7 +62,6 @@ EASY_HOME_SENSORS = {
     f"Kitchen_{ATTR_TEMPERATURE}": AldesSensorDescription(
         key="status",
         icon="mdi:thermometer",
-        name="Kitchen Temperature",
         translation_key="kitchen_temperature",
         device_class=SensorDeviceClass.TEMPERATURE,
         native_unit_of_measurement=UnitOfTemperature.CELSIUS,
@@ -75,7 +73,6 @@ EASY_HOME_SENSORS = {
     f"Bathroom_1_{ATTR_HUMIDITY}": AldesSensorDescription(
         key="status",
         icon="mdi:water-percent",
-        name="Bathroom 1 Humidity",
         translation_key="bathroom_1_humidity",
         device_class=SensorDeviceClass.HUMIDITY,
         native_unit_of_measurement=PERCENTAGE,
@@ -88,7 +85,6 @@ EASY_HOME_SENSORS = {
     f"Bathroom_1_{ATTR_TEMPERATURE}": AldesSensorDescription(
         key="status",
         icon="mdi:thermometer",
-        name="Bathroom 1 Temperature",
         translation_key="bathroom_1_temperature",
         device_class=SensorDeviceClass.TEMPERATURE,
         native_unit_of_measurement=UnitOfTemperature.CELSIUS,
@@ -100,7 +96,6 @@ EASY_HOME_SENSORS = {
     f"Bathroom_2_{ATTR_HUMIDITY}": AldesSensorDescription(
         key="status",
         icon="mdi:water-percent",
-        name="Bathroom 2 Humidity",
         translation_key="bathroom_2_humidity",
         device_class=SensorDeviceClass.HUMIDITY,
         native_unit_of_measurement=PERCENTAGE,
@@ -113,7 +108,6 @@ EASY_HOME_SENSORS = {
     f"Bathroom_2_{ATTR_TEMPERATURE}": AldesSensorDescription(
         key="status",
         icon="mdi:thermometer",
-        name="Bathroom 2 Temperature",
         translation_key="bathroom_2_temperature",
         device_class=SensorDeviceClass.TEMPERATURE,
         native_unit_of_measurement=UnitOfTemperature.CELSIUS,
@@ -125,7 +119,6 @@ EASY_HOME_SENSORS = {
     f"{ATTR_CO2}": AldesSensorDescription(
         key="status",
         icon="mdi:molecule-co2",
-        name="Carbon Dioxide",
         translation_key="co2",
         device_class=SensorDeviceClass.CO2,
         native_unit_of_measurement=CONCENTRATION_PARTS_PER_MILLION,
@@ -136,7 +129,6 @@ EASY_HOME_SENSORS = {
     f"{ATTR_QAI}": AldesSensorDescription(
         key="status",
         icon="mdi:air-filter",
-        name="Air Quality Index",
         translation_key="qai",
         device_class=SensorDeviceClass.AQI,
         native_unit_of_measurement=None,
@@ -148,7 +140,6 @@ EASY_HOME_SENSORS = {
     f"{ATTR_POLLUANT}": AldesSensorDescription(
         key="status",
         icon="mdi:flower-pollen",
-        name="Dominant Pollutant",
         translation_key="dominant_pollutant",
         native_unit_of_measurement=None,
         entity_category=EntityCategory.DIAGNOSTIC,
@@ -160,7 +151,6 @@ EASY_HOME_SENSORS = {
     f"{ATTR_VARHR}": AldesSensorDescription(
         key="status",
         icon="mdi:cloud-percent",
-        name="Humidity Variation",
         translation_key="humidity_variation",
         device_class=SensorDeviceClass.HUMIDITY,
         native_unit_of_measurement=PERCENTAGE,
@@ -173,7 +163,6 @@ EASY_HOME_SENSORS = {
     f"{ATTR_PWMQAI}": AldesSensorDescription(
         key="status",
         icon="mdi:fan",
-        name="Fan Speed",
         translation_key="fan_speed",
         native_unit_of_measurement="rpm",
         entity_category=EntityCategory.DIAGNOSTIC,
@@ -187,7 +176,6 @@ TONE_AIR_SENSORS = {
     f"{ATTR_THERMOSTAT}": AldesSensorDescription(
         key="status",
         icon="mdi:thermometer",
-        name="Thermostat",
         translation_key="temperature",
         device_class=SensorDeviceClass.TEMPERATURE,
         native_unit_of_measurement=UnitOfTemperature.CELSIUS,
@@ -263,24 +251,18 @@ class AldesSensorEntity(AldesEntity, SensorEntity):
         self.probe_id = probe_id
         self.entity_description = description
         self._attr_native_value = self._determine_native_value()
+        if description.path2recursive:
+            for product in coordinator.data:
+                if product["serial_number"] == product_serial_number:
+                    for thermostat in product["indicator"]["thermostats"]:
+                        if thermostat["ThermostatId"] == probe_id:
+                            self._attr_name = f"{thermostat['Name']} temperature"
+                            break
 
     @property
     def unique_id(self):
         """Return a unique ID to use for this entity."""
-        return f"{FRIENDLY_NAMES[self.reference]}_{self.product_serial_number}_{self.entity_description.name}"
-
-    @property
-    def name(self):
-        """Return a name to use for this entity."""
-        for product in self.coordinator.data:
-            if product["serial_number"] == self.product_serial_number:
-                if self.entity_description.path2 == "thermostats":
-                    for thermostat in product["indicator"]["thermostats"]:
-                        if thermostat["ThermostatId"] == self.probe_id:
-                            return f"{thermostat['Name']} temperature"
-                else:
-                    return self.entity_description.name
-        return None
+        return f"{FRIENDLY_NAMES[self.reference]}_{self.product_serial_number}_{self.entity_description.translation_key}_{self.probe_id}"
 
     def _determine_native_value(self):
         """Determine native value."""

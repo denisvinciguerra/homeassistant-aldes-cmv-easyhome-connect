@@ -47,6 +47,7 @@ class AldesSelectEntity(AldesEntity, SelectEntity):
     """Define an Aldes select."""
 
     _attr_entity_category = EntityCategory.CONFIG
+    _attr_translation_key = "mode"
 
     def __init__(
         self,
@@ -68,11 +69,6 @@ class AldesSelectEntity(AldesEntity, SelectEntity):
     def unique_id(self):
         """Return a unique ID to use for this entity."""
         return f"{FRIENDLY_NAMES[self.reference]}_{self.product_serial_number}_mode"
-
-    @property
-    def name(self):
-        """Return a name to use for this entity."""
-        return "Mode"
 
     @property
     def current_option(self) -> str:

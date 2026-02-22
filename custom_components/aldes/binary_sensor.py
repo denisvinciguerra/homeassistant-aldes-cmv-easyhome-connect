@@ -37,16 +37,12 @@ class AldesBinarySensorEntity(AldesEntity, BinarySensorEntity):
     """Define an Aldes binary sensor."""
 
     _attr_device_class = BinarySensorDeviceClass.CONNECTIVITY
+    _attr_translation_key = "connectivity"
 
     @property
     def unique_id(self):
         """Return a unique ID to use for this entity."""
         return f"{DOMAIN}_{self.product_serial_number}_connectivity"
-
-    @property
-    def name(self):
-        """Return a name to use for this entity."""
-        return "Connectivity"
 
     @callback
     def _handle_coordinator_update(self) -> None:
