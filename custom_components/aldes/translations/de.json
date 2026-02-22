@@ -1,0 +1,50 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Aldes",
+                "description": "Geben Sie Ihre Aldes-Anmeldedaten ein (dieselben wie in der Aldes-App). Siehe https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect für Hilfe.",
+                "data": {
+                    "username": "Benutzername",
+                    "password": "Passwort"
+                }
+            },
+            "reconfigure": {
+                "title": "Aldes neu konfigurieren",
+                "description": "Aktualisieren Sie Ihre Aldes-Anmeldedaten.",
+                "data": {
+                    "username": "Benutzername",
+                    "password": "Passwort"
+                }
+            }
+        },
+        "error": {
+            "auth": "Benutzername/Passwort ist falsch."
+        },
+        "abort": {
+            "single_instance_allowed": "Nur eine einzige Instanz ist erlaubt.",
+            "reconfigure_successful": "Anmeldedaten erfolgreich aktualisiert."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "Luftfeuchtigkeit Küche" },
+            "kitchen_temperature": { "name": "Temperatur Küche" },
+            "bathroom_1_humidity": { "name": "Luftfeuchtigkeit Bad 1" },
+            "bathroom_1_temperature": { "name": "Temperatur Bad 1" },
+            "bathroom_2_humidity": { "name": "Luftfeuchtigkeit Bad 2" },
+            "bathroom_2_temperature": { "name": "Temperatur Bad 2" },
+            "co2": { "name": "Kohlendioxid" },
+            "qai": { "name": "Luftqualitätsindex" },
+            "dominant_pollutant": { "name": "Dominanter Schadstoff" },
+            "humidity_variation": { "name": "Feuchtigkeitsvariation" },
+            "fan_speed": { "name": "Lüftergeschwindigkeit" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "Konnektivität" }
+        },
+        "select": {
+            "mode": { "name": "Modus" }
+        }
+    }
+}

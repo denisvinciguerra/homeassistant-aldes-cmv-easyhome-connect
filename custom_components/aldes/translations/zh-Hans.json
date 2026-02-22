@@ -1,0 +1,50 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Aldes",
+                "description": "输入您的 Aldes 账户凭据（与 Aldes 手机应用相同）。请参阅 https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect 获取帮助。",
+                "data": {
+                    "username": "用户名",
+                    "password": "密码"
+                }
+            },
+            "reconfigure": {
+                "title": "重新配置 Aldes",
+                "description": "更新您的 Aldes 账户凭据。",
+                "data": {
+                    "username": "用户名",
+                    "password": "密码"
+                }
+            }
+        },
+        "error": {
+            "auth": "用户名或密码错误。"
+        },
+        "abort": {
+            "single_instance_allowed": "仅允许一个实例。",
+            "reconfigure_successful": "凭据更新成功。"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "厨房湿度" },
+            "kitchen_temperature": { "name": "厨房温度" },
+            "bathroom_1_humidity": { "name": "浴室1湿度" },
+            "bathroom_1_temperature": { "name": "浴室1温度" },
+            "bathroom_2_humidity": { "name": "浴室2湿度" },
+            "bathroom_2_temperature": { "name": "浴室2温度" },
+            "co2": { "name": "二氧化碳" },
+            "qai": { "name": "空气质量指数" },
+            "dominant_pollutant": { "name": "主要污染物" },
+            "humidity_variation": { "name": "湿度变化" },
+            "fan_speed": { "name": "风扇转速" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "连接状态" }
+        },
+        "select": {
+            "mode": { "name": "模式" }
+        }
+    }
+}

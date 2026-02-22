@@ -1,0 +1,50 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Aldes",
+                "description": "Wprowadź dane logowania Aldes (takie same jak w aplikacji mobilnej Aldes). Zobacz https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect, aby uzyskać pomoc.",
+                "data": {
+                    "username": "Nazwa użytkownika",
+                    "password": "Hasło"
+                }
+            },
+            "reconfigure": {
+                "title": "Rekonfiguruj Aldes",
+                "description": "Zaktualizuj dane logowania Aldes.",
+                "data": {
+                    "username": "Nazwa użytkownika",
+                    "password": "Hasło"
+                }
+            }
+        },
+        "error": {
+            "auth": "Nieprawidłowa nazwa użytkownika lub hasło."
+        },
+        "abort": {
+            "single_instance_allowed": "Dozwolona jest tylko jedna instancja.",
+            "reconfigure_successful": "Dane logowania zostały pomyślnie zaktualizowane."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "Wilgotność Kuchnia" },
+            "kitchen_temperature": { "name": "Temperatura Kuchnia" },
+            "bathroom_1_humidity": { "name": "Wilgotność Łazienka 1" },
+            "bathroom_1_temperature": { "name": "Temperatura Łazienka 1" },
+            "bathroom_2_humidity": { "name": "Wilgotność Łazienka 2" },
+            "bathroom_2_temperature": { "name": "Temperatura Łazienka 2" },
+            "co2": { "name": "Dwutlenek Węgla" },
+            "qai": { "name": "Indeks Jakości Powietrza" },
+            "dominant_pollutant": { "name": "Dominujący Zanieczyszczacz" },
+            "humidity_variation": { "name": "Zmiana Wilgotności" },
+            "fan_speed": { "name": "Prędkość Wentylatora" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "Łączność" }
+        },
+        "select": {
+            "mode": { "name": "Tryb" }
+        }
+    }
+}

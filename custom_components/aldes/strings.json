@@ -25,5 +25,26 @@
             "single_instance_allowed": "Only a single instance is allowed.",
             "reconfigure_successful": "Credentials updated successfully."
         }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "Kitchen Humidity" },
+            "kitchen_temperature": { "name": "Kitchen Temperature" },
+            "bathroom_1_humidity": { "name": "Bathroom 1 Humidity" },
+            "bathroom_1_temperature": { "name": "Bathroom 1 Temperature" },
+            "bathroom_2_humidity": { "name": "Bathroom 2 Humidity" },
+            "bathroom_2_temperature": { "name": "Bathroom 2 Temperature" },
+            "co2": { "name": "Carbon Dioxide" },
+            "qai": { "name": "Air Quality Index" },
+            "dominant_pollutant": { "name": "Dominant Pollutant" },
+            "humidity_variation": { "name": "Humidity Variation" },
+            "fan_speed": { "name": "Fan Speed" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "Connectivity" }
+        },
+        "select": {
+            "mode": { "name": "Mode" }
+        }
     }
 }

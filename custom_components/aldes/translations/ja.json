@@ -1,0 +1,50 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Aldes",
+                "description": "Aldes アカウントの認証情報を入力してください（Aldes モバイルアプリと同じ）。ヘルプは https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect を参照してください。",
+                "data": {
+                    "username": "ユーザー名",
+                    "password": "パスワード"
+                }
+            },
+            "reconfigure": {
+                "title": "Aldes を再設定",
+                "description": "Aldes アカウントの認証情報を更新します。",
+                "data": {
+                    "username": "ユーザー名",
+                    "password": "パスワード"
+                }
+            }
+        },
+        "error": {
+            "auth": "ユーザー名またはパスワードが間違っています。"
+        },
+        "abort": {
+            "single_instance_allowed": "インスタンスは1つのみ許可されています。",
+            "reconfigure_successful": "認証情報が正常に更新されました。"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "キッチン湿度" },
+            "kitchen_temperature": { "name": "キッチン温度" },
+            "bathroom_1_humidity": { "name": "バスルーム1 湿度" },
+            "bathroom_1_temperature": { "name": "バスルーム1 温度" },
+            "bathroom_2_humidity": { "name": "バスルーム2 湿度" },
+            "bathroom_2_temperature": { "name": "バスルーム2 温度" },
+            "co2": { "name": "二酸化炭素" },
+            "qai": { "name": "空気質指数" },
+            "dominant_pollutant": { "name": "主要汚染物質" },
+            "humidity_variation": { "name": "湿度変動" },
+            "fan_speed": { "name": "ファン速度" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "接続状態" }
+        },
+        "select": {
+            "mode": { "name": "モード" }
+        }
+    }
+}

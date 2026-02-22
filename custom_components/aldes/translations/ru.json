@@ -1,0 +1,50 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Aldes",
+                "description": "Введите учётные данные Aldes (те же, что и в мобильном приложении Aldes). См. https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect для помощи.",
+                "data": {
+                    "username": "Имя пользователя",
+                    "password": "Пароль"
+                }
+            },
+            "reconfigure": {
+                "title": "Перенастроить Aldes",
+                "description": "Обновите учётные данные Aldes.",
+                "data": {
+                    "username": "Имя пользователя",
+                    "password": "Пароль"
+                }
+            }
+        },
+        "error": {
+            "auth": "Неверное имя пользователя или пароль."
+        },
+        "abort": {
+            "single_instance_allowed": "Допускается только один экземпляр.",
+            "reconfigure_successful": "Учётные данные успешно обновлены."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "Влажность Кухня" },
+            "kitchen_temperature": { "name": "Температура Кухня" },
+            "bathroom_1_humidity": { "name": "Влажность Ванная 1" },
+            "bathroom_1_temperature": { "name": "Температура Ванная 1" },
+            "bathroom_2_humidity": { "name": "Влажность Ванная 2" },
+            "bathroom_2_temperature": { "name": "Температура Ванная 2" },
+            "co2": { "name": "Углекислый газ" },
+            "qai": { "name": "Индекс качества воздуха" },
+            "dominant_pollutant": { "name": "Доминирующий загрязнитель" },
+            "humidity_variation": { "name": "Изменение влажности" },
+            "fan_speed": { "name": "Скорость вентилятора" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "Подключение" }
+        },
+        "select": {
+            "mode": { "name": "Режим" }
+        }
+    }
+}

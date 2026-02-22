@@ -1,0 +1,50 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Aldes",
+                "description": "Ange dina Aldes-kontouppgifter (samma som i Aldes mobilapp). Se https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect för hjälp.",
+                "data": {
+                    "username": "Användarnamn",
+                    "password": "Lösenord"
+                }
+            },
+            "reconfigure": {
+                "title": "Konfigurera om Aldes",
+                "description": "Uppdatera dina Aldes-kontouppgifter.",
+                "data": {
+                    "username": "Användarnamn",
+                    "password": "Lösenord"
+                }
+            }
+        },
+        "error": {
+            "auth": "Felaktigt användarnamn eller lösenord."
+        },
+        "abort": {
+            "single_instance_allowed": "Endast en instans tillåts.",
+            "reconfigure_successful": "Inloggningsuppgifter uppdaterade."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "Luftfuktighet Kök" },
+            "kitchen_temperature": { "name": "Temperatur Kök" },
+            "bathroom_1_humidity": { "name": "Luftfuktighet Badrum 1" },
+            "bathroom_1_temperature": { "name": "Temperatur Badrum 1" },
+            "bathroom_2_humidity": { "name": "Luftfuktighet Badrum 2" },
+            "bathroom_2_temperature": { "name": "Temperatur Badrum 2" },
+            "co2": { "name": "Koldioxid" },
+            "qai": { "name": "Luftkvalitetsindex" },
+            "dominant_pollutant": { "name": "Dominerande Förorening" },
+            "humidity_variation": { "name": "Luftfuktighetsvariation" },
+            "fan_speed": { "name": "Fläkthastighet" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "Anslutning" }
+        },
+        "select": {
+            "mode": { "name": "Läge" }
+        }
+    }
+}

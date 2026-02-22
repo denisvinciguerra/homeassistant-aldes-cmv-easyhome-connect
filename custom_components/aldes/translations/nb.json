@@ -8,13 +8,43 @@
                     "username": "Brukernavn",
                     "password": "Passord"
                 }
+            },
+            "reconfigure": {
+                "title": "Rekonfigurer Aldes",
+                "description": "Oppdater Aldes-kontoopplysningene dine.",
+                "data": {
+                    "username": "Brukernavn",
+                    "password": "Passord"
+                }
             }
         },
         "error": {
             "auth": "Brukernavn/Passord er feil."
         },
         "abort": {
-            "single_instance_allowed": "Denne integrasjonen kan kun konfigureres en gang."
+            "single_instance_allowed": "Denne integrasjonen kan kun konfigureres en gang.",
+            "reconfigure_successful": "Opplysningene ble oppdatert."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "Kjøkkenfuktighet" },
+            "kitchen_temperature": { "name": "Kjøkkentemperatur" },
+            "bathroom_1_humidity": { "name": "Bad 1 fuktighet" },
+            "bathroom_1_temperature": { "name": "Bad 1 temperatur" },
+            "bathroom_2_humidity": { "name": "Bad 2 fuktighet" },
+            "bathroom_2_temperature": { "name": "Bad 2 temperatur" },
+            "co2": { "name": "Karbondioksid" },
+            "qai": { "name": "Luftkvalitetsindeks" },
+            "dominant_pollutant": { "name": "Dominerende forurensning" },
+            "humidity_variation": { "name": "Fuktighetsvariasjon" },
+            "fan_speed": { "name": "Viftehastighet" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "Tilkobling" }
+        },
+        "select": {
+            "mode": { "name": "Modus" }
         }
     }
 }

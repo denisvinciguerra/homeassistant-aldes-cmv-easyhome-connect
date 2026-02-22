@@ -25,5 +25,26 @@
             "single_instance_allowed": "Une seule instance est autorisée.",
             "reconfigure_successful": "Identifiants mis à jour avec succès."
         }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "Humidité Cuisine" },
+            "kitchen_temperature": { "name": "Température Cuisine" },
+            "bathroom_1_humidity": { "name": "Humidité Salle de bain 1" },
+            "bathroom_1_temperature": { "name": "Température Salle de bain 1" },
+            "bathroom_2_humidity": { "name": "Humidité Salle de bain 2" },
+            "bathroom_2_temperature": { "name": "Température Salle de bain 2" },
+            "co2": { "name": "Dioxyde de carbone" },
+            "qai": { "name": "Indice de qualité de l'air" },
+            "dominant_pollutant": { "name": "Polluant dominant" },
+            "humidity_variation": { "name": "Variation d'humidité" },
+            "fan_speed": { "name": "Vitesse du ventilateur" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "Connectivité" }
+        },
+        "select": {
+            "mode": { "name": "Mode" }
+        }
     }
 }

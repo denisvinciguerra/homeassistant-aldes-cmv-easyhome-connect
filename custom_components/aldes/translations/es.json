@@ -1,0 +1,50 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Aldes",
+                "description": "Introduce tus credenciales de Aldes (las mismas que en la app móvil de Aldes). Consulta https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect para ayuda.",
+                "data": {
+                    "username": "Usuario",
+                    "password": "Contraseña"
+                }
+            },
+            "reconfigure": {
+                "title": "Reconfigurar Aldes",
+                "description": "Actualiza tus credenciales de Aldes.",
+                "data": {
+                    "username": "Usuario",
+                    "password": "Contraseña"
+                }
+            }
+        },
+        "error": {
+            "auth": "Usuario/Contraseña incorrectos."
+        },
+        "abort": {
+            "single_instance_allowed": "Solo se permite una instancia.",
+            "reconfigure_successful": "Credenciales actualizadas correctamente."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "kitchen_humidity": { "name": "Humedad Cocina" },
+            "kitchen_temperature": { "name": "Temperatura Cocina" },
+            "bathroom_1_humidity": { "name": "Humedad Baño 1" },
+            "bathroom_1_temperature": { "name": "Temperatura Baño 1" },
+            "bathroom_2_humidity": { "name": "Humedad Baño 2" },
+            "bathroom_2_temperature": { "name": "Temperatura Baño 2" },
+            "co2": { "name": "Dióxido de carbono" },
+            "qai": { "name": "Índice de calidad del aire" },
+            "dominant_pollutant": { "name": "Contaminante dominante" },
+            "humidity_variation": { "name": "Variación de humedad" },
+            "fan_speed": { "name": "Velocidad del ventilador" }
+        },
+        "binary_sensor": {
+            "connectivity": { "name": "Conectividad" }
+        },
+        "select": {
+            "mode": { "name": "Modo" }
+        }
+    }
+}
