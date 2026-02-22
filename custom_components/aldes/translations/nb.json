@@ -3,7 +3,7 @@
         "step": {
             "user": {
                 "title": "Aldes",
-                "description": "Skriv inn Aldes-kontoopplysningene dine (samme som Aldes-mobilappen). Se https://github.com/denisvinciguerra/homeassistant-aldes for hjelp.",
+                "description": "Skriv inn Aldes-kontoopplysningene dine (samme som Aldes-mobilappen). Se https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect for hjelp.",
                 "data": {
                     "username": "Brukernavn",
                     "password": "Passord"

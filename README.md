@@ -1,10 +1,13 @@
-# 🌬️ Aldes integration for Home Assistant
+# 🌀 Aldes CMV integration for Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
 
-Home Assistant custom integration for **Aldes EASYHOME PureAir Compact CONNECT** single-flow controlled mechanical ventilation (CMV) units via the **Aldes Connect Box**.
+This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units equipped with an Aldes Connect Box** into Home Assistant, giving you full visibility and control over your ventilation system.
 
-✅ Setup validated with **2 units linked to the same Aldes account**
+✅ Validated with **2 single-flow EASYHOME PureAir Compact CONNECT units on the same Aldes account**
+
+> **⚠️ Looking for T.One heat pump support?**
+> This integration is focused on CMV units only. For the **T.One AIR heat pump**, please use [this fork by tiagfernandes](https://github.com/tiagfernandes/homeassistant-aldes) instead. Using T.One with this integration is **untested and not recommended**.
 
 ---
 
@@ -21,7 +24,6 @@ Home Assistant custom integration for **Aldes EASYHOME PureAir Compact CONNECT**
 | 📊 Humidity variation | Humidity variation rate |
 | ⚡ Current mode power | Active mode power level |
 | 🎛️ Mode selector | Switch between Holidays, Daily, Boost, Guest, Air Prog |
-| 🏠 Climate | Target temperature control (T.One AIR) |
 
 ---
 
@@ -30,7 +32,7 @@ Home Assistant custom integration for **Aldes EASYHOME PureAir Compact CONNECT**
 Available through [HACS](https://hacs.xyz/) as a custom repository.
 
 1. In HACS, go to **Integrations** → ⋮ **Custom repositories**
-2. Add `https://github.com/denisvinciguerra/homeassistant-aldes` with category **Integration**
+2. Add `https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect` with category **Integration**
 3. Install the integration and restart Home Assistant
 4. Go to **Settings** → **Integrations** → **Add Integration** → search **Aldes**
 5. Enter your Aldes account credentials (same as the Aldes mobile app) 🔑
@@ -51,6 +53,8 @@ The original author archived his repository. Other existing forks appear to focu
 - 🎚️ Fixed select entity mode detection
 - ⏳ Fixed missing `await` on API auth retry
 - 📦 Moved `device_info` to base entity class for proper device grouping
+- 🏷️ Cleaner entity names with `has_entity_name`
+- 🔄 Reconfigure flow to update credentials without reinstalling
 - ✨ Modernized code (`asyncio.timeout`, enum device classes, removed deprecated APIs)
 
 ---

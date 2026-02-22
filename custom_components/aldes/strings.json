@@ -3,7 +3,7 @@
         "step": {
             "user": {
                 "title": "Aldes",
-                "description": "Enter your Aldes account credentials (same as the Aldes mobile app). See https://github.com/denisvinciguerra/homeassistant-aldes for help.",
+                "description": "Enter your Aldes account credentials (same as the Aldes mobile app). See https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect for help.",
                 "data": {
                     "username": "Username",
                     "password": "Password"

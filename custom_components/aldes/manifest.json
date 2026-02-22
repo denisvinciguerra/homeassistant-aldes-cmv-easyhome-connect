@@ -1,10 +1,10 @@
 {
     "domain": "aldes",
     "name": "Aldes",
-    "version": "2.0.5",
+    "version": "2.1.0",
     "integration_type": "hub",
-    "documentation": "https://github.com/denisvinciguerra/homeassistant-aldes",
-    "issue_tracker": "https://github.com/denisvinciguerra/homeassistant-aldes/issues",
+    "documentation": "https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect",
+    "issue_tracker": "https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect/issues",
     "codeowners": [
       "@denisvinciguerra"
     ],

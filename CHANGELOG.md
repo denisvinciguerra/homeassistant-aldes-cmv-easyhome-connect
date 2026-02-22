@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.1.0
+
+- 🔀 **Repository renamed** to `homeassistant-aldes-cmv-easyhome-connect` to better reflect the CMV focus
+- 📝 **README rewritten** — clarified CMV-only scope, added T.One heat pump redirect to [tiagfernandes fork](https://github.com/tiagfernandes/homeassistant-aldes)
+- 🔄 **Reconfigure flow** — update your Aldes credentials without reinstalling
+- 🏷️ **Cleaner entity names** — entities use `has_entity_name` so HA composes `<Device> <Sensor>` names properly
+- 🔗 Updated all internal links to new repo URL
+
 ## v2.0.5
 
 - 🏷️ **Cleaner entity names** — entities now use `has_entity_name` so HA composes names as `<Device> <Sensor>` instead of duplicating the device name. You may need to delete old entities with duplicate names.
