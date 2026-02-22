@@ -22,7 +22,6 @@ This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units eq
 | 🍃 Air Quality Index | QAI value from the unit |
 | 🌿 Dominant pollutant | Currently dominant pollutant |
 | 📊 Humidity variation | Humidity variation rate |
-| ⚡ Current mode power | Active mode power level |
 | 🎛️ Mode selector | Switch between Holidays, Daily, Boost, Guest, Air Prog |
 
 ---

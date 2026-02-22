@@ -28,7 +28,6 @@ ATTR_CO2 = "CO2"
 ATTR_QAI = "Air Quality Index"
 ATTR_POLLUANT = "Polluant Dominant"
 ATTR_VARHR = "Humidity Variation"
-ATTR_PWRQAI = "Actual mode"
 
 
 @dataclass
@@ -54,9 +53,11 @@ EASY_HOME_SENSORS = {
         translation_key="humidity",
         device_class=SensorDeviceClass.HUMIDITY,
         native_unit_of_measurement=PERCENTAGE,
+        suggested_display_precision=0,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="HrCuCo",
+        value=lambda value: round(value),
     ),
     f"Kitchen_{ATTR_TEMPERATURE}": AldesSensorDescription(
         key="status",
@@ -68,7 +69,7 @@ EASY_HOME_SENSORS = {
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="TmpCu",
-        value=lambda value: value / 10,
+        value=lambda value: round(value / 10, 1),
     ),
     f"Bathroom_1_{ATTR_HUMIDITY}": AldesSensorDescription(
         key="status",
@@ -77,9 +78,11 @@ EASY_HOME_SENSORS = {
         translation_key="humidity",
         device_class=SensorDeviceClass.HUMIDITY,
         native_unit_of_measurement=PERCENTAGE,
+        suggested_display_precision=0,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="HrBa1Co",
+        value=lambda value: round(value),
     ),
     f"Bathroom_1_{ATTR_TEMPERATURE}": AldesSensorDescription(
         key="status",
@@ -91,7 +94,7 @@ EASY_HOME_SENSORS = {
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="TmpBa1",
-        value=lambda value: value / 10,
+        value=lambda value: round(value / 10, 1),
     ),
     f"Bathroom_2_{ATTR_HUMIDITY}": AldesSensorDescription(
         key="status",
@@ -100,9 +103,11 @@ EASY_HOME_SENSORS = {
         translation_key="humidity",
         device_class=SensorDeviceClass.HUMIDITY,
         native_unit_of_measurement=PERCENTAGE,
+        suggested_display_precision=0,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="HrBa2Co",
+        value=lambda value: round(value),
     ),
     f"Bathroom_2_{ATTR_TEMPERATURE}": AldesSensorDescription(
         key="status",
@@ -114,7 +119,7 @@ EASY_HOME_SENSORS = {
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="TmpBa2",
-        value=lambda value: value / 10,
+        value=lambda value: round(value / 10, 1),
     ),
     f"{ATTR_CO2}": AldesSensorDescription(
         key="status",
@@ -158,18 +163,11 @@ EASY_HOME_SENSORS = {
         translation_key="humidity",
         device_class=SensorDeviceClass.HUMIDITY,
         native_unit_of_measurement=PERCENTAGE,
+        suggested_display_precision=0,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="VarHR",
-    ),
-    f"{ATTR_PWRQAI}": AldesSensorDescription(
-        key="status",
-        icon="mdi:wind-power",
-        name="Current Mode Power",
-        translation_key="mode",
-        entity_category=EntityCategory.DIAGNOSTIC,
-        path1="indicator",
-        path2="VarHR",
+        value=lambda value: round(value),
     ),
 }
 

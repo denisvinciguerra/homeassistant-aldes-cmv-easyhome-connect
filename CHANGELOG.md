@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.1.1
+
+- 🔢 **Rounded sensor values** — humidity sensors now display as integers (no more 15-digit decimals), temperatures rounded to 0.1°C
+- 🗑️ **Removed fake "Current Mode Power" sensor** — was a duplicate of Humidity Variation incorrectly labeled as watts
+
 ## v2.1.0
 
 - 🔀 **Repository renamed** to `homeassistant-aldes-cmv-easyhome-connect` to better reflect the CMV focus

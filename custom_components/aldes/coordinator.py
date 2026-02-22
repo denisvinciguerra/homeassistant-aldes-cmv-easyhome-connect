@@ -34,6 +34,18 @@ class AldesDataUpdateCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         """Update data via library."""
         try:
             async with asyncio.timeout(self._API_TIMEOUT):
-                return await self.api.fetch_data()
+                data = await self.api.fetch_data()
+                for product in data:
+                    _LOGGER.debug(
+                        "Aldes API response for %s: indicator keys = %s",
+                        product.get("serial_number"),
+                        list(product.get("indicator", {}).keys()) if isinstance(product.get("indicator"), dict) else "N/A",
+                    )
+                    _LOGGER.debug(
+                        "Aldes API full indicator for %s: %s",
+                        product.get("serial_number"),
+                        product.get("indicator"),
+                    )
+                return data
         except Exception as exception:
             raise UpdateFailed(exception) from exception
