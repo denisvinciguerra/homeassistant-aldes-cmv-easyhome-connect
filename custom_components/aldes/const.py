@@ -3,7 +3,7 @@ from homeassistant.const import Platform
 
 NAME = "Aldes EasyHome"
 DOMAIN = "aldes"
-VERSION = "2.2.3"
+VERSION = "2.3.0"
 
 CONF_USERNAME = "username"
 CONF_PASSWORD = "password"
@@ -11,6 +11,7 @@ CONF_PASSWORD = "password"
 MANUFACTURER = "Aldes"
 PLATFORMS: list[Platform] = [
     Platform.BINARY_SENSOR,
+    Platform.BUTTON,
     Platform.SENSOR,
     Platform.CLIMATE,
     Platform.SELECT,

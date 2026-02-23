@@ -48,6 +48,9 @@
         },
         "select": {
             "mode": { "name": "모드" }
+        },
+        "button": {
+            "refresh": { "name": "새로고침" }
         }
     }
 }

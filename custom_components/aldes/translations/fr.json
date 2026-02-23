@@ -48,6 +48,9 @@
         },
         "select": {
             "mode": { "name": "Mode" }
+        },
+        "button": {
+            "refresh": { "name": "Rafraîchir" }
         }
     }
 }

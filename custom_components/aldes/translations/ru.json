@@ -48,6 +48,9 @@
         },
         "select": {
             "mode": { "name": "Режим" }
+        },
+        "button": {
+            "refresh": { "name": "Обновить" }
         }
     }
 }

@@ -48,6 +48,9 @@
         },
         "select": {
             "mode": { "name": "Läge" }
+        },
+        "button": {
+            "refresh": { "name": "Uppdatera" }
         }
     }
 }

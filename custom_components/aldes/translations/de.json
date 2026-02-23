@@ -48,6 +48,9 @@
         },
         "select": {
             "mode": { "name": "Modus" }
+        },
+        "button": {
+            "refresh": { "name": "Aktualisieren" }
         }
     }
 }

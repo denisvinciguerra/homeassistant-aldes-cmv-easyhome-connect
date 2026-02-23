@@ -48,6 +48,9 @@
         },
         "select": {
             "mode": { "name": "モード" }
+        },
+        "button": {
+            "refresh": { "name": "更新" }
         }
     }
 }

@@ -28,6 +28,7 @@ This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units eq
 | ⏲️ Kitchen Timer | Kitchen boost timer state |
 | 🔄 Effective Ventilation Mode | Actual ventilation mode reported by the unit |
 | 🎛️ Mode selector | Switch between Holidays, Daily, Boost, Guest, Air Prog |
+| 🔃 Refresh button | Manually refresh data from Aldes cloud (30s cooldown) |
 
 ---
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.3.0
+
+- New **Refresh button** per device to manually refresh data from Aldes cloud
+- 30-second cooldown between manual refreshes to avoid API abuse (logged when triggered)
+- Translations in all 13 languages
+
 ## v2.2.3
 
 - Increased delay before cloud refresh after mode change from 5s to 15s (Aldes cloud is slow to propagate)
