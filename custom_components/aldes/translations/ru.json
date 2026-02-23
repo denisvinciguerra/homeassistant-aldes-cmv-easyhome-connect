@@ -2,7 +2,7 @@
     "config": {
         "step": {
             "user": {
-                "title": "Aldes",
+                "title": "Aldes EasyHome",
                 "description": "Введите учётные данные Aldes (те же, что и в мобильном приложении Aldes). См. https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect для помощи.",
                 "data": {
                     "username": "Имя пользователя",

@@ -2,7 +2,7 @@
     "config": {
         "step": {
             "user": {
-                "title": "Aldes",
+                "title": "Aldes EasyHome",
                 "description": "Enter your Aldes account credentials (same as the Aldes mobile app). See https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect for help.",
                 "data": {
                     "username": "Username",

@@ -2,7 +2,7 @@
     "config": {
         "step": {
             "user": {
-                "title": "Aldes",
+                "title": "Aldes EasyHome",
                 "description": "Aldes アカウントの認証情報を入力してください（Aldes モバイルアプリと同じ）。ヘルプは https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect を参照してください。",
                 "data": {
                     "username": "ユーザー名",

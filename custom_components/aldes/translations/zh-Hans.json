@@ -2,7 +2,7 @@
     "config": {
         "step": {
             "user": {
-                "title": "Aldes",
+                "title": "Aldes EasyHome",
                 "description": "输入您的 Aldes 账户凭据（与 Aldes 手机应用相同）。请参阅 https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect 获取帮助。",
                 "data": {
                     "username": "用户名",

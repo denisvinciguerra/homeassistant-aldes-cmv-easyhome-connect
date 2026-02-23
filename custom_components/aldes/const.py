@@ -1,7 +1,7 @@
 """Constants for aldes."""
 from homeassistant.const import Platform
 
-NAME = "Aldes"
+NAME = "Aldes EasyHome"
 DOMAIN = "aldes"
 VERSION = "2.1.4"
 

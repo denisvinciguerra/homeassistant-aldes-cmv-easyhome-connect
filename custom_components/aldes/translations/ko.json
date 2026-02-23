@@ -2,7 +2,7 @@
     "config": {
         "step": {
             "user": {
-                "title": "Aldes",
+                "title": "Aldes EasyHome",
                 "description": "Aldes 계정 자격 증명을 입력하세요 (Aldes 모바일 앱과 동일). 도움말은 https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect 을 참조하세요.",
                 "data": {
                     "username": "사용자 이름",
