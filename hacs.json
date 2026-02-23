@@ -1,5 +1,5 @@
 {
-    "name": "Aldes",
+    "name": "Aldes EasyHome",
     "hacs": "1.28.3",
     "domains": [
         "binary_sensor",
