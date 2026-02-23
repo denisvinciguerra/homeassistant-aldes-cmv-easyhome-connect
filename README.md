@@ -66,6 +66,6 @@ The original author archived his repository. Other existing forks appear to focu
 
 ## 🙏 Credits
 
-- Original integration by [guix77](https://github.com/guix77)
+- Original integration by [guix77](https://github.com/guix77) and [Fredzxda](https://github.com/Fredzxda)
 - Some code inspired from [hassio_aldes](https://github.com/aalmazanarbs/hassio_aldes)
 - Based on [integration_blueprint](https://github.com/custom-components/integration_blueprint)
