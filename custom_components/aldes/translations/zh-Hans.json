@@ -38,8 +38,8 @@
             "qai": { "name": "空气质量指数" },
             "dominant_pollutant": { "name": "主要污染物" },
             "humidity_variation": { "name": "湿度变化" },
-            "fan_speed": { "name": "风扇转速" },
-            "input_0_10v": { "name": "0-10V 输入" },
+            "internal_sensor_setpoint": { "name": "内置传感器设定值" },
+            "external_sensor_setpoint": { "name": "外部传感器设定值" },
             "kitchen_timer": { "name": "厨房定时器" },
             "effective_ventilation_mode": { "name": "实际通风模式" }
         },

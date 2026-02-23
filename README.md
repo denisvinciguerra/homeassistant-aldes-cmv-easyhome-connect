@@ -23,8 +23,8 @@ This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units eq
 | 🍃 Air Quality Index | QAI value from the unit |
 | 🌿 Dominant pollutant | Currently dominant pollutant |
 | 📊 Humidity variation | Humidity variation rate |
-| 🌀 Fan speed | Fan speed (RPM) |
-| ⚡ 0-10V Input | External input voltage setpoint (V) |
+| 🌀 Internal Sensor Setpoint | Motor speed setpoint from built-in air quality sensors — `PwmQai` (0–1000) |
+| ⚡ External Sensor Setpoint | Motor speed setpoint from external 0-10V input — `In0_10V` (0–1000) |
 | ⏲️ Kitchen Timer | Kitchen boost timer state |
 | 🔄 Effective Ventilation Mode | Actual ventilation mode reported by the unit |
 | 🎛️ Mode selector | Switch between Holidays, Daily, Boost, Guest, Air Prog |

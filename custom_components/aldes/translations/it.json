@@ -38,8 +38,8 @@
             "qai": { "name": "Indice di qualità dell'aria" },
             "dominant_pollutant": { "name": "Inquinante dominante" },
             "humidity_variation": { "name": "Variazione di umidità" },
-            "fan_speed": { "name": "Velocità ventilatore" },
-            "input_0_10v": { "name": "Ingresso 0-10V" },
+            "internal_sensor_setpoint": { "name": "Setpoint Sensore Interno" },
+            "external_sensor_setpoint": { "name": "Setpoint Sensore Esterno" },
             "kitchen_timer": { "name": "Timer Cucina" },
             "effective_ventilation_mode": { "name": "Modalità Ventilazione Effettiva" }
         },

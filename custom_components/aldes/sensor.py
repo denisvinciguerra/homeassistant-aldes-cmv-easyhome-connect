@@ -4,7 +4,6 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import (
     UnitOfTemperature,
-    UnitOfElectricPotential,
     PERCENTAGE,
     CONCENTRATION_PARTS_PER_MILLION,
     EntityCategory,
@@ -29,7 +28,7 @@ ATTR_CO2 = "CO2"
 ATTR_QAI = "Air Quality Index"
 ATTR_POLLUANT = "Dominant Pollutant"
 ATTR_VARHR = "Humidity Variation"
-ATTR_PWMQAI = "Fan Speed"
+ATTR_PWMQAI = "Air Quality PWM"
 ATTR_IN0_10V = "0-10V Input"
 ATTR_TIMCU = "Kitchen Timer"
 ATTR_CONVE = "Effective Ventilation Mode"
@@ -167,8 +166,8 @@ EASY_HOME_SENSORS = {
     f"{ATTR_PWMQAI}": AldesSensorDescription(
         key="status",
         icon="mdi:fan",
-        translation_key="fan_speed",
-        native_unit_of_measurement="rpm",
+        translation_key="internal_sensor_setpoint",
+        native_unit_of_measurement=None,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="PwmQai",
@@ -177,14 +176,12 @@ EASY_HOME_SENSORS = {
     f"{ATTR_IN0_10V}": AldesSensorDescription(
         key="status",
         icon="mdi:flash",
-        translation_key="input_0_10v",
-        device_class=SensorDeviceClass.VOLTAGE,
-        native_unit_of_measurement=UnitOfElectricPotential.VOLT,
-        suggested_display_precision=1,
+        translation_key="external_sensor_setpoint",
+        native_unit_of_measurement=None,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="In0_10V",
-        value=lambda value: round(value / 100, 1),
+        value=lambda value: round(value),
     ),
     f"{ATTR_TIMCU}": AldesSensorDescription(
         key="status",

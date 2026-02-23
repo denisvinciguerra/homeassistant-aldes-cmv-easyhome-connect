@@ -38,8 +38,8 @@
             "qai": { "name": "Indeks Jakości Powietrza" },
             "dominant_pollutant": { "name": "Dominujący Zanieczyszczacz" },
             "humidity_variation": { "name": "Zmiana Wilgotności" },
-            "fan_speed": { "name": "Prędkość Wentylatora" },
-            "input_0_10v": { "name": "Wejście 0-10V" },
+            "internal_sensor_setpoint": { "name": "Nastawa czujnika wewnętrznego" },
+            "external_sensor_setpoint": { "name": "Nastawa czujnika zewnętrznego" },
             "kitchen_timer": { "name": "Minutnik Kuchenny" },
             "effective_ventilation_mode": { "name": "Efektywny Tryb Wentylacji" }
         },

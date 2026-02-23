@@ -38,8 +38,8 @@
             "qai": { "name": "Luftkvalitetsindex" },
             "dominant_pollutant": { "name": "Dominerande Förorening" },
             "humidity_variation": { "name": "Luftfuktighetsvariation" },
-            "fan_speed": { "name": "Fläkthastighet" },
-            "input_0_10v": { "name": "0-10V Ingång" },
+            "internal_sensor_setpoint": { "name": "Börvärde intern sensor" },
+            "external_sensor_setpoint": { "name": "Börvärde extern sensor" },
             "kitchen_timer": { "name": "Kökstimer" },
             "effective_ventilation_mode": { "name": "Effektivt Ventilationsläge" }
         },

@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.1
+
+- Renamed `PwmQai` sensor to "Internal Sensor Setpoint" (was "Fan Speed") — motor speed setpoint from built-in air quality algorithm
+- Renamed `In0_10V` sensor to "External Sensor Setpoint" (was "0-10V Input") — motor speed setpoint from external 0-10V input
+- Both sensors now display raw values (0–1000) without unit
+
 ## v2.2.0
 
 - **3 new diagnostic sensors**: 0-10V Input (voltage setpoint), Kitchen Timer (TimCu), Effective Ventilation Mode (ConVe)
