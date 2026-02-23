@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.5
+
+- 🏷️ **Renamed integration** to "Aldes EasyHome" (was just "Aldes")
+
 ## v2.1.4
 
 - 🐛 **Fixed entity translations** — entity names now properly display in the user's language (French, German, etc.) instead of always English
