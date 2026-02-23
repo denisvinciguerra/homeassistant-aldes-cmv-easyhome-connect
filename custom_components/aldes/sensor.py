@@ -250,6 +250,7 @@ class AldesSensorEntity(AldesEntity, SensorEntity):
         )
         self.probe_id = probe_id
         self.entity_description = description
+        self._attr_translation_key = description.translation_key
         self._attr_native_value = self._determine_native_value()
         if description.path2recursive:
             for product in coordinator.data:
