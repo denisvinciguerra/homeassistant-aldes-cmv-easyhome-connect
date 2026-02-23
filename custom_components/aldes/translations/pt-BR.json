@@ -38,7 +38,10 @@
             "qai": { "name": "Índice de Qualidade do Ar" },
             "dominant_pollutant": { "name": "Poluente Dominante" },
             "humidity_variation": { "name": "Variação de Umidade" },
-            "fan_speed": { "name": "Velocidade do Ventilador" }
+            "fan_speed": { "name": "Velocidade do Ventilador" },
+            "input_0_10v": { "name": "Entrada 0-10V" },
+            "kitchen_timer": { "name": "Temporizador Cozinha" },
+            "effective_ventilation_mode": { "name": "Modo de Ventilação Efetivo" }
         },
         "binary_sensor": {
             "connectivity": { "name": "Conectividade" }

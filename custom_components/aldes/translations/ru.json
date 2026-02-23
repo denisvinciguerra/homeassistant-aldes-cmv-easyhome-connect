@@ -38,7 +38,10 @@
             "qai": { "name": "Индекс качества воздуха" },
             "dominant_pollutant": { "name": "Доминирующий загрязнитель" },
             "humidity_variation": { "name": "Изменение влажности" },
-            "fan_speed": { "name": "Скорость вентилятора" }
+            "fan_speed": { "name": "Скорость вентилятора" },
+            "input_0_10v": { "name": "Вход 0-10V" },
+            "kitchen_timer": { "name": "Таймер Кухни" },
+            "effective_ventilation_mode": { "name": "Эффективный Режим Вентиляции" }
         },
         "binary_sensor": {
             "connectivity": { "name": "Подключение" }

@@ -38,7 +38,10 @@
             "qai": { "name": "空気質指数" },
             "dominant_pollutant": { "name": "主要汚染物質" },
             "humidity_variation": { "name": "湿度変動" },
-            "fan_speed": { "name": "ファン速度" }
+            "fan_speed": { "name": "ファン速度" },
+            "input_0_10v": { "name": "0-10V 入力" },
+            "kitchen_timer": { "name": "キッチンタイマー" },
+            "effective_ventilation_mode": { "name": "実効換気モード" }
         },
         "binary_sensor": {
             "connectivity": { "name": "接続状態" }

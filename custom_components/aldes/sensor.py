@@ -4,6 +4,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import (
     UnitOfTemperature,
+    UnitOfElectricPotential,
     PERCENTAGE,
     CONCENTRATION_PARTS_PER_MILLION,
     EntityCategory,
@@ -15,7 +16,7 @@ from homeassistant.components.sensor import (
 )
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import DOMAIN, FRIENDLY_NAMES, POLLUANTS
+from .const import DOMAIN, FRIENDLY_NAMES, MODES_TEXT, POLLUANTS
 from .entity import AldesEntity
 
 from collections.abc import Callable
@@ -29,6 +30,9 @@ ATTR_QAI = "Air Quality Index"
 ATTR_POLLUANT = "Dominant Pollutant"
 ATTR_VARHR = "Humidity Variation"
 ATTR_PWMQAI = "Fan Speed"
+ATTR_IN0_10V = "0-10V Input"
+ATTR_TIMCU = "Kitchen Timer"
+ATTR_CONVE = "Effective Ventilation Mode"
 
 
 @dataclass
@@ -169,6 +173,37 @@ EASY_HOME_SENSORS = {
         path1="indicator",
         path2="PwmQai",
         value=lambda value: round(value),
+    ),
+    f"{ATTR_IN0_10V}": AldesSensorDescription(
+        key="status",
+        icon="mdi:flash",
+        translation_key="input_0_10v",
+        device_class=SensorDeviceClass.VOLTAGE,
+        native_unit_of_measurement=UnitOfElectricPotential.VOLT,
+        suggested_display_precision=1,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        path1="indicator",
+        path2="In0_10V",
+        value=lambda value: round(value / 100, 1),
+    ),
+    f"{ATTR_TIMCU}": AldesSensorDescription(
+        key="status",
+        icon="mdi:timer-outline",
+        translation_key="kitchen_timer",
+        native_unit_of_measurement=None,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        path1="indicator",
+        path2="TimCu",
+    ),
+    f"{ATTR_CONVE}": AldesSensorDescription(
+        key="status",
+        icon="mdi:fan-chevron-up",
+        translation_key="effective_ventilation_mode",
+        native_unit_of_measurement=None,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        path1="indicator",
+        path2="ConVe",
+        value=lambda value: MODES_TEXT.get(value, value),
     ),
 }
 

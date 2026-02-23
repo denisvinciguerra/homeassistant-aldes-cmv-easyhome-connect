@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.0
+
+- **3 new diagnostic sensors**: 0-10V Input (voltage setpoint), Kitchen Timer (TimCu), Effective Ventilation Mode (ConVe)
+- Added "cov" (VOC) to the dominant pollutant mapping
+- Translations for new sensors in all 13 languages
+
 ## v2.1.5
 
 - 🏷️ **Renamed integration** to "Aldes EasyHome" (was just "Aldes")

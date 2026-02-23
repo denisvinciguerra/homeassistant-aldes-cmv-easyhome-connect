@@ -38,7 +38,10 @@
             "qai": { "name": "Luftkvalitetsindeks" },
             "dominant_pollutant": { "name": "Dominerende forurensning" },
             "humidity_variation": { "name": "Fuktighetsvariasjon" },
-            "fan_speed": { "name": "Viftehastighet" }
+            "fan_speed": { "name": "Viftehastighet" },
+            "input_0_10v": { "name": "0-10V Inngang" },
+            "kitchen_timer": { "name": "Kjøkkentimer" },
+            "effective_ventilation_mode": { "name": "Effektiv Ventilasjonsmodus" }
         },
         "binary_sensor": {
             "connectivity": { "name": "Tilkobling" }

@@ -3,7 +3,7 @@ from homeassistant.const import Platform
 
 NAME = "Aldes EasyHome"
 DOMAIN = "aldes"
-VERSION = "2.1.5"
+VERSION = "2.2.0"
 
 CONF_USERNAME = "username"
 CONF_PASSWORD = "password"
@@ -38,4 +38,5 @@ MODES_TEXT = {
 POLLUANTS = {
     "hr": "Humidity",
     "co2": "CO2",
+    "cov": "VOC",
 }

@@ -38,7 +38,10 @@
             "qai": { "name": "공기질 지수" },
             "dominant_pollutant": { "name": "주요 오염물질" },
             "humidity_variation": { "name": "습도 변화" },
-            "fan_speed": { "name": "팬 속도" }
+            "fan_speed": { "name": "팬 속도" },
+            "input_0_10v": { "name": "0-10V 입력" },
+            "kitchen_timer": { "name": "주방 타이머" },
+            "effective_ventilation_mode": { "name": "실효 환기 모드" }
         },
         "binary_sensor": {
             "connectivity": { "name": "연결 상태" }
