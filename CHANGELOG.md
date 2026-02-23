@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.1.4
+
+- 🐛 **Fixed entity translations** — entity names now properly display in the user's language (French, German, etc.) instead of always English
+- 🏷️ Removed hardcoded `name=` from sensor descriptions so `translation_key` takes effect
+
 ## v2.1.3
 
 - 🌍 **Translations in 13 languages** — entity names translated in en, fr, de, es, it, nb, pt-BR, pl, ru, zh-Hans, ja, ko, sv
