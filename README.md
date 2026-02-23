@@ -7,7 +7,8 @@ This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units eq
 ✅ Validated with **2 single-flow EASYHOME PureAir Compact CONNECT units on the same Aldes account**
 
 > **⚠️ Looking for T.One heat pump support?**
-> This integration is focused on CMV units only. For the **T.One AIR heat pump**, please use [this fork by tiagfernandes](https://github.com/tiagfernandes/homeassistant-aldes) instead. Using T.One with this integration is **untested and not recommended**.
+> This integration is focused on CMV units only. Using T.One with this integration is **untested and not recommended**.
+> For the **T.One AIR heat pump**, I recommend having a look at [this fork by tiagfernandes](https://github.com/tiagfernandes/homeassistant-aldes) instead. 
 
 ---
 
@@ -23,6 +24,9 @@ This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units eq
 | 🌿 Dominant pollutant | Currently dominant pollutant |
 | 📊 Humidity variation | Humidity variation rate |
 | 🌀 Fan speed | Fan speed (RPM) |
+| ⚡ 0-10V Input | External input voltage setpoint (V) |
+| ⏲️ Kitchen Timer | Kitchen boost timer state |
+| 🔄 Effective Ventilation Mode | Actual ventilation mode reported by the unit |
 | 🎛️ Mode selector | Switch between Holidays, Daily, Boost, Guest, Air Prog |
 
 ---
