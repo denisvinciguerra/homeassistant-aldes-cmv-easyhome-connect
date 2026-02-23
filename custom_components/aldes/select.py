@@ -1,4 +1,5 @@
 """Support for the Aldes selects."""
+import asyncio
 import logging
 
 from homeassistant.components.select import SelectEntity
@@ -78,6 +79,8 @@ class AldesSelectEntity(AldesEntity, SelectEntity):
         """Set mode."""
         await self.coordinator.api.set_mode(self.modem, option)
         self._mode = option
+        self.async_write_ha_state()
+        await asyncio.sleep(5)
         await self.coordinator.async_request_refresh()
 
     @callback

@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.2.2
+
+- Fixed mode change showing stale state — HA now updates optimistically and waits 5s before refreshing from Aldes cloud
+
 ## v2.2.1
 
 - Renamed `PwmQai` sensor to "Internal Sensor Setpoint" (was "Fan Speed") — motor speed setpoint from built-in air quality algorithm
