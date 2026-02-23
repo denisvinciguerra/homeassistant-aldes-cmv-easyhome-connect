@@ -1,8 +1,12 @@
 # Changelog
 
+## v2.2.3
+
+- Increased delay before cloud refresh after mode change from 5s to 15s (Aldes cloud is slow to propagate)
+
 ## v2.2.2
 
-- Fixed mode change showing stale state — HA now updates optimistically and waits 5s before refreshing from Aldes cloud
+- Fixed mode change showing stale state — HA now updates optimistically and waits before refreshing from Aldes cloud
 
 ## v2.2.1
 

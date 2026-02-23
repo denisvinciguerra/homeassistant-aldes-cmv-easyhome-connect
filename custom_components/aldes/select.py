@@ -80,7 +80,7 @@ class AldesSelectEntity(AldesEntity, SelectEntity):
         await self.coordinator.api.set_mode(self.modem, option)
         self._mode = option
         self.async_write_ha_state()
-        await asyncio.sleep(5)
+        await asyncio.sleep(15)
         await self.coordinator.async_request_refresh()
 
     @callback
