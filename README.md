@@ -46,7 +46,7 @@ Available through [HACS](https://hacs.xyz/) as a custom repository.
 
 ## 🔀 About this fork
 
-This is a fork of [homeassistant-aldes](https://github.com/guix77/homeassistant-aldes/) by [guix77](https://github.com/guix77), debugged via vibe coding with Claude 🤖
+This is a fork of [homeassistant-aldes](https://github.com/Fredzxda/homeas), debugged via vibe coding with Claude 🤖
 
 The original author archived his repository. Other existing forks appear to focus on different Aldes products (T.One AIR, InspirAIR, etc.) rather than the single-flow **EASYHOME PureAir Compact CONNECT** CMV units.
 
