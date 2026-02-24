@@ -8,7 +8,9 @@ This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units eq
 
 > **⚠️ Looking for T.One heat pump support?**
 > This integration is focused on CMV units only. Using T.One with this integration is **untested and not recommended**.
-> For the **T.One AIR heat pump**, I recommend having a look at [this fork by tiagfernandes](https://github.com/tiagfernandes/homeassistant-aldes) instead. 
+> For the **T.One AIR heat pump**, I recommend having a look at [this fork by tiagfernandes](https://github.com/tiagfernandes/homeassistant-aldes) instead.
+
+![Device preview in Home Assistant](docs/preview.jpg)
 
 ---
 
