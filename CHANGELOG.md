@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.3.1
+
+- Setpoint sensors (Internal/External) and Kitchen Timer now record history and can be graphed in HA
+- Removed assumed value range from documentation (API does not specify min/max)
+
 ## v2.3.0
 
 - New **Refresh button** per device to manually refresh data from Aldes cloud

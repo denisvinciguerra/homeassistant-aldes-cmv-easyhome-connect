@@ -12,6 +12,7 @@ from homeassistant.components.sensor import (
     SensorEntity,
     SensorDeviceClass,
     SensorEntityDescription,
+    SensorStateClass,
 )
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -168,6 +169,7 @@ EASY_HOME_SENSORS = {
         icon="mdi:fan",
         translation_key="internal_sensor_setpoint",
         native_unit_of_measurement=None,
+        state_class=SensorStateClass.MEASUREMENT,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="PwmQai",
@@ -178,6 +180,7 @@ EASY_HOME_SENSORS = {
         icon="mdi:flash",
         translation_key="external_sensor_setpoint",
         native_unit_of_measurement=None,
+        state_class=SensorStateClass.MEASUREMENT,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="In0_10V",
@@ -188,6 +191,7 @@ EASY_HOME_SENSORS = {
         icon="mdi:timer-outline",
         translation_key="kitchen_timer",
         native_unit_of_measurement=None,
+        state_class=SensorStateClass.MEASUREMENT,
         entity_category=EntityCategory.DIAGNOSTIC,
         path1="indicator",
         path2="TimCu",

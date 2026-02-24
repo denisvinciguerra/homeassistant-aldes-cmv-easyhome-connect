@@ -1,7 +1,7 @@
 {
     "domain": "aldes",
     "name": "Aldes EasyHome",
-    "version": "2.3.0",
+    "version": "2.3.1",
     "integration_type": "hub",
     "documentation": "https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect",
     "issue_tracker": "https://github.com/denisvinciguerra/homeassistant-aldes-cmv-easyhome-connect/issues",
