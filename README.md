@@ -10,8 +10,6 @@ This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units eq
 > This integration is focused on CMV units only. Using T.One with this integration is **untested and not recommended**.
 > For the **T.One AIR heat pump**, I recommend having a look at [this fork by tiagfernandes](https://github.com/tiagfernandes/homeassistant-aldes) instead.
 
-![Device preview in Home Assistant](docs/preview.jpg)
-
 ---
 
 ## 🔎 Supported features
@@ -34,6 +32,12 @@ This integration brings **Aldes CMV (Controlled Mechanical Ventilation) units eq
 
 ---
 
+## 📸 Preview
+
+![Device preview in Home Assistant](docs/preview.jpg)
+
+---
+
 ## 📦 Installation
 
 Available through [HACS](https://hacs.xyz/) as a custom repository.
@@ -43,8 +47,6 @@ Available through [HACS](https://hacs.xyz/) as a custom repository.
 3. Install the integration and restart Home Assistant
 4. Go to **Settings** → **Integrations** → **Add Integration** → search **Aldes**
 5. Enter your Aldes account credentials (same as the Aldes mobile app) 🔑
-
----
 
 ## 🔀 About this fork
 
